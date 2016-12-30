@@ -1,24 +1,15 @@
-//Handling multiple requests
-function placeAnOrder(orderNum) {
-    console.log("Customer order: ", orderNum);
-    cookAndDeliverFood(function () {
-        console.log("Delivered food order: ", orderNum);
-    });
-}
+//this
+var testVar = {
+    printFName : function () {
+        console.log("My name is Chai");
+        console.log(this === testVar);
+    }
+};
+testVar.printFName();
 
-//Simulate a 5sec process
-function cookAndDeliverFood(callback) {
-    setTimeout(callback, 5000);
+//default calling context is global
+function testFunc() {
+    console.log("\nThis is a global function");
+    console.log(this === global)
 }
-
-//simulate user requests
-placeAnOrder(1);
-placeAnOrder(2);
-placeAnOrder(3);
-placeAnOrder(4);
-placeAnOrder(5);
-placeAnOrder(6);
-placeAnOrder(7);
-placeAnOrder(8);
-placeAnOrder(9);
-placeAnOrder(10);
+testFunc();

@@ -1,25 +1,24 @@
-//variables
-var person = {
-    name : 'Chai',
-    age : 23
-};
-console.log(person);
-
-//functions
-function addNumbers(a, b) {
-    return a + b;
+//Handling multiple requests
+function placeAnOrder(orderNum) {
+    console.log("Customer order: ", orderNum);
+    cookAndDeliverFood(function () {
+        console.log("Delivered food order: ", orderNum);
+    });
 }
-console.log(addNumbers(7, 3));
 
-function worthless() {
-    //function without a return value
+//Simulate a 5sec process
+function cookAndDeliverFood(callback) {
+    setTimeout(callback, 5000);
 }
-console.log(worthless());
 
-//anonymous function
-var msg = function () {
-    console.log("Hello World")
-}
-msg();
-
-setTimeout(msg, 5000);
+//simulate user requests
+placeAnOrder(1);
+placeAnOrder(2);
+placeAnOrder(3);
+placeAnOrder(4);
+placeAnOrder(5);
+placeAnOrder(6);
+placeAnOrder(7);
+placeAnOrder(8);
+placeAnOrder(9);
+placeAnOrder(10);

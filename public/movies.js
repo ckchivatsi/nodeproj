@@ -1,10 +1,11 @@
-function printAvatar() {
-    console.log("Avatar: PG-13");
-}
+module.exports = {
+    avatar : function () {
+        console.log("Avatar: PG-13");
+    },
 
-function printChappie() {
-    console.log("Chappie: R");
-}
+    chappie : function () {
+        console.log("Chappie: R");
+    },
 
-//exporting modules
-module.exports.avatar = printAvatar;
+    favMovie : "Fav Movie: SAW"
+};
